@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police plus moderne */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f2f7, #bbdefb); /* Dégradé bleu et blanc */
+    color: #333;
+    overflow: hidden; /* Empêche le défilement si le contenu est trop grand */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%; /* S'assure que le conteneur prend toute la largeur disponible */
+}
+
+h1 {
+    color: #2c3e50; /* Couleur plus foncée pour le titre */
+    margin-bottom: 35px; /* Augmenter l'espace en dessous */
+    font-size: 2em; /* Taille légèrement plus grande */
+    font-weight: 600; /* Poids de la police semi-gras */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Légère ombre sur le texte */
+}
+
+.login-box {
+    background-color: #ffffff; /* Fond blanc pur */
+    padding: 40px 30px;
+    border-radius: 20px; /* Bordures plus arrondies */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée pour la profondeur */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 420px; /* Largeur maximale légèrement augmentée */
+    margin: 0 auto;
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+/* INPUT STYLES */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 16px 20px; /* Plus de padding pour une meilleure ergonomie */
+    border: 1px solid #e0e0e0; /* Bordure plus douce */
+    border-radius: 10px; /* Bordures plus arrondies pour les inputs */
+    font-size: 1.05em; /* Texte légèrement plus grand */
+    background-color: #fcfcfc; /* Arrière-plan légèrement teinté */
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    -webkit-appearance: none; /* Pour un style uniforme sur tous les navigateurs */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #4CAF50; /* Vert pour le focus, pour un look plus moderne */
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Ombre verte au focus */
+    outline: none;
+}
+
+/* BUTTON */
+button {
+    background-color: #4CAF50; /* Vert vibrant pour le bouton */
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 10px; /* Bordures plus arrondies pour le bouton */
+    font-size: 1.15em; /* Texte du bouton légèrement plus grand */
+    font-weight: 600; /* Texte du bouton en gras */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3); /* Ombre assortie au vert */
+    letter-spacing: 0.5px; /* Espacement léger entre les lettres */
+}
+
+button:hover {
+    background-color: #43A047; /* Vert plus foncé au survol */
+    transform: translateY(-3px); /* Effet de soulèvement plus prononcé */
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+button:active {
+    transform: translateY(0); /* Retour à la position normale au clic */
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+}
+
+/* ERREUR / MESSAGE */
+p {
+    margin-top: -5px; /* Réduire l'espace au-dessus du message d'erreur */
+    margin-bottom: 10px; /* Ajouter un peu d'espace en dessous */
+    color: #e74c3c; /* Rouge plus vif pour les messages d'erreur */
+    font-size: 0.9em; /* Texte du message légèrement plus petit */
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .login-box {
+        padding: 30px 20px;
+        border-radius: 15px; /* Ajustement du rayon sur mobile */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Ajustement de la taille du titre sur mobile */
+        margin-bottom: 25px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    button {
+        padding: 14px 18px; /* Ajustement du padding sur mobile */
+        font-size: 1em;
+    }
+}

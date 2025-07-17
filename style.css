@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+ 
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1e7ff' fill-opacity='0.5'%3E%3Ccircle cx='5' cy='5' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #e0f2ff; /* bleu clair */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: fadeInUp 0.6s ease;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1f1f1f;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #bbb;
+}
+
+.password-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.password-row a {
+  font-size: 13px;
+  color: #6d60f5;
+  text-decoration: none;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.checkbox-row input {
+  margin-right: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5a4df3;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #483bd8;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #5a4df3;
+  text-decoration: none;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #555;
+  color: white;
+  font-size: 11px;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  transition: transform 0.15s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #483bd8;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-box {
+  animation: fadeInUp 0.6s ease;
+}
+
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.password-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.1rem;
+}
+/* --- STYLES POUR LES MESSAGES D'ALERTE --- */
+
+/* Style de base commun à tous les messages */
+.message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+/* Style spécifique pour le message d'attente (orange/jaune) */
+.message-attente {
+  background-color: #fffbe6; /* Fond jaune très clair */
+  color: #8a6d3b; /* Texte ocre */
+  border-color: #ffeeba; /* Bordure jaune */
+}
+
+/* Style pour les messages d'erreur (rouge) */
+.message-erreur {
+  background-color: #f8d7da; /* Fond rose clair */
+  color: #721c24; /* Texte rouge foncé */
+  border-color: #f5c6cb; /* Bordure rose */
+}

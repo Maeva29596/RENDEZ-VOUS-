@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f0ff;
+  margin: 0;
+  padding: 0;
+  color: #4b007d;
+}
+
+.dashboard {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #4b007d;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.card {
+  width: 40%;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.card h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+.card.confirmed {
+  background-color: #ffcce5;
+}
+
+.card.pending {
+  background-color: #e0c3fc;
+}
+
+.search {
+  margin: 20px 0;
+}
+
+.search input {
+  padding: 10px;
+  width: 90%;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #d7b5f9;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #4b007d;
+  font-size: 14px;
+}
+

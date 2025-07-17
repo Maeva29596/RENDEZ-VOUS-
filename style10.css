@@ -1,0 +1,199 @@
+/* Définition des variables de couleur et des styles de base */
+:root {
+    --primary-blue: #2962ff;
+    --light-blue-bg: #eaf1ff;
+    --danger-red: #d9534f;
+    --danger-red-light: #fde7e9;
+    --body-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-dark: #333;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+}
+
+/* En-tête principal */
+.main-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn-retour-dashboard {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-retour-dashboard:hover {
+    background-color: #0056b3;
+}
+
+
+/* Conteneur principal pour centrer le contenu */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Style des cartes */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Formulaire d'ajout */
+.add-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.flex-grow {
+    flex: 1; /* Permet au champ description de prendre plus de place */
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form-group input {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+/* Style des boutons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e53e6;
+}
+
+/* Liste des services et tableau */
+.service-list {
+    width: 100%;
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.service-table th,
+.service-table td {
+    padding: 1rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.service-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.service-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.table-header-row {
+    background-color: var(--light-blue-bg);
+}
+
+.table-header-row th {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+/* Alignement et style des icônes d'action */
+.text-right {
+    text-align: right;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-delete {
+    color: var(--danger-red);
+}
+
+.btn-delete:hover {
+    background-color: var(--danger-red-light);
+}

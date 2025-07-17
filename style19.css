@@ -1,0 +1,152 @@
+/* Réinitialisation de base et police globale */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f7f9;
+    color: #4A4A4A;
+    line-height: 1.6;
+}
+
+/* Barre de dégradé en haut */
+.top-gradient-bar {
+    height: 6px;
+    background: linear-gradient(90deg, #82a4f8, #a382f8);
+}
+
+/* Conteneur principal pour centrer le contenu */
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* En-tête avec titre et icône */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header .icon {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    border-radius: 8px;
+    margin: 0 auto 15px auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+header .subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+/* Carte blanche contenant la politique */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* Style pour chaque section de la politique */
+.policy-section {
+    margin-bottom: 2.5rem;
+}
+
+/* Ne pas mettre de marge sur la dernière section */
+.policy-section:last-of-type {
+    margin-bottom: 0;
+}
+
+/* En-tête de section (numéro + titre) */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-number {
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0; /* Empêche le cercle de se déformer */
+}
+
+.section-header h2 {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Contenu de la section (paragraphes et listes) */
+.section-content {
+    padding-left: 45px; /* Aligne le contenu avec le titre */
+}
+
+.section-content p {
+    margin-bottom: 1rem;
+}
+
+.section-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-content ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 0.75rem;
+}
+
+/* Création de la puce personnalisée */
+.section-content ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Conteneur et style du bouton d'acceptation */
+.button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.accept-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Pour un bouton bien arrondi */
+    padding: 15px 45px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.accept-button:hover {
+    background-color: #2980b9; /* Une couleur un peu plus foncée au survol */
+    transform: translateY(-2px);
+}

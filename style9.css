@@ -1,0 +1,628 @@
+/* Variables CSS - Couleurs précises de la maquette */
+:root {
+    --sidebar-bg: #2B426C; /* Bleu foncé de la sidebar */
+    --sidebar-text: #E0E7FF;
+    --sidebar-text-active: #FFFFFF;
+    --sidebar-active-bg: #4A6C9B; /* Fond de l'onglet actif */
+    --sidebar-hover-bg: #3F5A82; /* Fond de l'onglet au survol */
+
+    --header-bg: #FFFFFF;
+    --main-bg: #F0F2F5; /* Fond principal clair */
+    --text-dark: #333333;
+    --text-light: #6A798C;
+    --border-color: #E6EBF0;
+    --card-bg: #FFFFFF;
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    /* Couleurs des icônes et badges */
+    --icon-patient: #60A5FA; /* Bleu vif pour icône patient */
+    --icon-pending: #FACC15; /* Jaune vif pour en attente */
+    --icon-today: #22C55E; /* Vert vif pour aujourd'hui */
+
+    /* Couleurs de bordure pour les cartes de service */
+    --border-blue: #60A5FA;
+    --border-green: #22C55E;
+    --border-purple: #A855F7;
+    --border-orange: #F97316;
+    --border-red: #EF4444;
+    --border-teal: #14B8A6;
+
+    /* Couleurs des badges médecins */
+    --badge-blue: #D0E0FA; /* Background bleu clair */
+    --badge-blue-text: #3B82F6; /* Texte bleu */
+    --badge-green: #D1FAE5; /* Background vert clair */
+    --badge-green-text: #10B981; /* Texte vert */
+    --badge-purple: #EEDDFF; /* Background violet clair */
+    --badge-purple-text: #A855F7; /* Texte violet */
+    --badge-orange: #FFEDD5; /* Background orange clair */
+    --badge-orange-text: #F97316; /* Texte orange */
+    --badge-red: #FEE2E2; /* Background rouge clair */
+    --badge-red-text: #EF4444; /* Texte rouge */
+    --badge-teal: #CCFBF1; /* Background teal clair */
+    --badge-teal-text: #14B8A6; /* Texte teal */
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Utilise Poppins, ou Inter si vous préférez */
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+    font-size: 15px; /* Taille de police par défaut ajustée */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px; /* Plus large que la précédente maquette */
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-light);
+    flex-shrink: 0;
+    border-radius: 0 15px 15px 0; /* Bords arrondis sur le côté droit */
+    margin-right: 20px; /* Espace entre sidebar et main content */
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer le contenu du header */
+    padding: 0 20px 40px;
+    margin-bottom: 20px;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */ /* Retiré pour coller à la maquette */
+}
+
+.sidebar-header .logo-icon {
+    font-size: 38px;
+    color: var(--sidebar-text-active);
+    margin-right: 10px;
+}
+
+.sidebar-header .logo-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--sidebar-text-active);
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar-nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    color: var(--sidebar-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 0 10px 10px 0; /* Bords arrondis pour les liens */
+}
+
+.sidebar-nav ul li a i {
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+.sidebar-nav ul li.active a {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-text-active);
+    font-weight: 500;
+}
+
+.sidebar-nav ul li a:hover {
+    background-color: var(--sidebar-hover-bg);
+    color: var(--sidebar-text-active);
+}
+
+.sidebar-footer {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    color: var(--sidebar-text-active); /* Couleur du texte pour le profil utilisateur */
+}
+
+.user-profile .user-avatar {
+    font-size: 40px; /* Taille de l'icône de profil */
+    color: var(--sidebar-text-active);
+    margin-right: 15px;
+}
+
+.user-profile .user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile .user-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.user-profile .user-role {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+/* Main Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.main-header .page-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.main-header .header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.main-header .header-icons i {
+    font-size: 24px;
+    color: var(--text-light);
+    cursor: pointer;
+    position: relative; /* Pour les badges de notification */
+}
+
+/* Badges de notification */
+.main-header .header-icons i:nth-child(1)::after { /* Première icône (bell) */
+    content: '5'; /* Exemple de nombre de notifications */
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #EF4444; /* Rouge pour les notifications */
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.main-header .header-icons i:nth-child(2)::after { /* Deuxième icône (message) */
+    content: '2'; /* Exemple de nombre de messages */
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #EF4444; /* Rouge pour les messages */
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+/* Overview Cards V2 */
+.overview-cards-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.overview-card-v2 {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.overview-card-v2 .card-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+.overview-card-v2.patient-card .card-icon-wrapper {
+    background-color: #E0E7FF; /* Bleu clair */
+    color: var(--icon-patient);
+}
+
+.overview-card-v2.pending-appointments-card .card-icon-wrapper {
+    background-color: #FFFBEB; /* Jaune clair */
+    color: var(--icon-pending);
+}
+
+.overview-card-v2.today-appointments-card .card-icon-wrapper {
+    background-color: #D1FAE5; /* Vert clair */
+    color: var(--icon-today);
+}
+
+.overview-card-v2 .card-content h3 {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.overview-card-v2 .card-content .metric {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.overview-card-v2 .card-content .trend {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.overview-card-v2 .card-content .trend.completed {
+    color: var(--icon-today); /* Vert pour "complétés" */
+    font-weight: 500;
+}
+
+
+/* Add Service Section */
+.add-service-section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 40px;
+}
+
+.add-service-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.add-service-form {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end; /* Alignement du bouton */
+    flex-wrap: wrap; /* Pour la responsivité */
+}
+
+.add-service-form .input-group {
+    flex: 1; /* Permet aux inputs de prendre de l'espace */
+    min-width: 250px; /* Largeur minimale pour les inputs */
+}
+
+.add-service-form label {
+    display: block;
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.add-service-form input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-dark);
+    background-color: var(--main-bg); /* Un léger fond pour les inputs */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-service-form input[type="text"]:focus {
+    border-color: var(--icon-patient);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.add-service-btn {
+    background-color: var(--icon-patient); /* Couleur bleue du bouton */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Empêche le bouton de rétrécir */
+}
+
+.add-service-btn:hover {
+    background-color: #4B85E0; /* Bleu légèrement plus foncé au survol */
+}
+
+.add-service-btn i {
+    font-size: 20px;
+}
+
+
+/* Hospital Services List Section */
+.hospital-services-list .section-header-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.hospital-services-list .section-header-list h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.list-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background-color: var(--card-bg); /* Fond blanc */
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-weight: 500;
+}
+
+.action-btn:hover {
+    background-color: var(--main-bg);
+    border-color: #CED4DA;
+}
+
+.action-btn i {
+    font-size: 18px;
+    color: var(--text-light);
+}
+
+.services-grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.service-card-list {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow-card);
+    border-top: 5px solid transparent; /* Bordure supérieure pour la couleur */
+    transition: transform 0.2s ease;
+}
+
+.service-card-list:hover {
+    transform: translateY(-5px);
+}
+
+/* Couleurs des bordures de services */
+.service-card-list.primary-blue-border { border-top-color: var(--border-blue); }
+.service-card-list.primary-green-border { border-top-color: var(--border-green); }
+.service-card-list.primary-purple-border { border-top-color: var(--border-purple); }
+.service-card-list.primary-orange-border { border-top-color: var(--border-orange); }
+.service-card-list.primary-red-border { border-top-color: var(--border-red); }
+.service-card-list.primary-teal-border { border-top-color: var(--border-teal); }
+
+.service-card-list .service-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    display: inline-block; /* Pour aligner le badge */
+}
+
+.service-card-list .doctors-count {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+/* Couleurs des badges médecins */
+.doctors-count.blue-badge { background-color: var(--badge-blue); color: var(--badge-blue-text); }
+.doctors-count.green-badge { background-color: var(--badge-green); color: var(--badge-green-text); }
+.doctors-count.purple-badge { background-color: var(--badge-purple); color: var(--badge-purple-text); }
+.doctors-count.orange-badge { background-color: var(--badge-orange); color: var(--badge-orange-text); }
+.doctors-count.red-badge { background-color: var(--badge-red); color: var(--badge-red-text); }
+.doctors-count.teal-badge { background-color: var(--badge-teal); color: var(--badge-teal-text); }
+
+
+.service-card-list .service-description {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.service-card-list .service-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Responsive Design (adapté à la nouvelle structure) */
+@media (max-width: 1200px) {
+    .dashboard-container {
+        flex-direction: column; /* La sidebar passe au-dessus sur les écrans plus petits */
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        margin-right: 0;
+        padding: 20px;
+        flex-direction: row; /* La sidebar devient une barre horizontale */
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap; /* Permet aux éléments de la sidebar de s'envelopper */
+    }
+    .sidebar-header {
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .sidebar-nav {
+        flex-grow: 1; /* Permet à la navigation de prendre de l'espace */
+        order: 3; /* Déplace la nav en bas ou après le header/footer */
+        width: 100%; /* Prend toute la largeur disponible */
+        margin-top: 15px;
+    }
+    .sidebar-nav ul {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .sidebar-nav ul li {
+        margin-bottom: 0;
+    }
+    .sidebar-nav ul li a {
+        border-radius: 8px; /* Ajuste les bords arrondis pour le mode horizontal */
+        padding: 10px 15px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    .sidebar-nav ul li a i {
+        margin-right: 8px;
+    }
+    .sidebar-footer {
+        border-top: none;
+        margin-top: 0;
+        order: 2; /* Place le profil utilisateur à côté du header */
+        padding: 0;
+    }
+    .user-profile {
+        margin-left: auto; /* Pousse le profil à droite */
+    }
+    .user-profile .user-info {
+        display: none; /* Cacher le texte du profil sur les petits écrans */
+    }
+    .user-profile .user-avatar {
+        margin-right: 0; /* Enlève la marge de l'avatar si le texte est caché */
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .overview-cards-v2, .services-grid-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .add-service-form {
+        flex-direction: column; /* Les inputs passent en colonne */
+        align-items: stretch;
+    }
+    .add-service-form .input-group {
+        min-width: unset;
+        width: 100%;
+    }
+    .add-service-btn {
+        width: 100%; /* Bouton prend toute la largeur */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .main-header .header-icons {
+        width: 100%;
+        justify-content: flex-end; /* Pousse les icônes à droite */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-nav ul {
+        flex-direction: column; /* Les liens de nav s'empilent */
+        align-items: center;
+    }
+    .sidebar-nav ul li {
+        width: 90%; /* Chaque lien prend presque toute la largeur */
+    }
+    .sidebar-nav ul li a {
+        justify-content: center; /* Centre le contenu des liens */
+        padding: 10px;
+    }
+    .sidebar-nav ul li a i {
+        margin-right: 10px;
+    }
+
+    .overview-cards-v2, .services-grid-list {
+        grid-template-columns: 1fr; /* Une seule colonne pour les cartes */
+        gap: 15px;
+    }
+    .overview-card-v2 .card-content .metric {
+        font-size: 26px; /* Taille de police légèrement réduite */
+    }
+    .service-card-list {
+        padding: 20px;
+    }
+    .service-card-list .service-title {
+        font-size: 16px;
+    }
+    .service-card-list .doctors-count {
+        margin-left: 5px;
+        padding: 3px 8px;
+    }
+    .service-card-list .service-description,
+    .service-card-list .service-stats {
+        font-size: 13px;
+    }
+}

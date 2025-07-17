@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion - MediConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-box">
+      
+      <h2>Connexion</h2>
+      <p>Accédez à votre compte MediConnect</p>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="votre@email.com" required />
+
+      <div class="password-row">
+        <label for="password">Mot de passe</label>
+        
+      </div>
+      <input type="password" id="password" placeholder="********" required />
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Se souvenir de moi</label>
+      </div>
+
+      <button type="submit">Se connecter</button>
+
+      <p class="signup-text">Pas encore de compte? <a href="inscription.html">S’inscrire</a></p>
+    </form>
+  </div>
+</body>
+</html>
+
+
+
+<?php
+// TOUT LE CODE PHP DE TRAITEMENT DOIT ÊTRE AVANT LE CODE HTML
+
+// On vérifie si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+   // 1. Inclure le fichier de connexion à la base de données
+    require_once 'db_connect.php';
+
+    // 2. Récupérer les données du formulaire en les nettoyant
+    $email = trim($_POST['email']);
+    $mot_de_passe_clair = trim($_POST['password']); // Mot de passe en clair
+
+    // 3. Préparer la requête pour récupérer l'utilisateur par email
+    $sql = "SELECT id, mot_de_passe FROM patients WHERE email = ?";
+
+    $stmt = $conn->prepare($sql);
+
+    if ($stmt === false) {
+        die("Erreur de préparation de la requête : " . $conn->error);
+    }
+
+    // 4. Lier le paramètre à la requête
+    $stmt->bind_param("s", $email);
+
+    // 5. Exécuter la requête
+    $stmt->execute();
+
+    // 6. Récupérer les résultats
+    $result = $stmt->get_result();
+
+    // 7. Vérifier si un utilisateur avec cet email existe
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        $mot_de_passe_hache = $row['mot_de_passe'];
+
+        // 8. Vérifier si le mot de passe correspond
+        if (password_verify($mot_de_passe_clair, $mot_de_passe_hache)) {
+            // Démarrer la session et enregistrer l'utilisateur comme connecté
+            session_start();
+            $_SESSION['user_id'] = $row['id']; // Vous pouvez stocker d'autres informations si nécessaire
+            // Rediriger vers une page de tableau de bord ou une autre page sécurisée
+            header("Location: tableau_de_bord.php"); // Remplacez par l'URL souhaitée
+            exit();
+        } else {
+            // Mot de passe incorrect
+            $message_erreur = "Mot de passe incorrect.";
+        }
+    } else {
+        // Aucun utilisateur trouvé avec cet email
+        $message_erreur = "Aucun utilisateur trouvé avec cet email.";
+    }
+
+    // 9. Fermer les connexions
+    $stmt->close();
+    $conn->close();
+}
+?>

@@ -1,0 +1,367 @@
+/* Réinitialisation et polices de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #F9FAFB; /* Gris très clair */
+    color: #374151; /* Gris foncé pour le texte */
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1e7ff' fill-opacity='0.5'%3E%3Ccircle cx='5' cy='5' r='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ----- Header ----- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #F9FAFB;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1F2937;
+}
+
+.logo-icon {
+    background-color: #2563EB; /* Bleu principal */
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 12px;
+    font-style: normal;
+    font-size: 1.2em; /* Adjust icon size */
+    font-weight: bold;
+    line-height: 1; /* Align vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-text-sub {
+    font-size: 14px;
+    font-weight: normal;
+    color: #6B7280;
+    margin-left: 5px;
+}
+
+
+.nav-buttons .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary {
+    border: 1px solid #D1D5DB; /* Bordure grise */
+    color: #374151;
+    margin-right: 10px;
+}
+.btn-secondary:hover {
+    background-color: #F3F4F6;
+}
+
+.btn-primary {
+    background-color: #2563EB;
+    color: white;
+    border: 1px solid #2563EB;
+}
+.btn-primary:hover {
+    background-color: #1D4ED8; /* Bleu plus foncé au survol */
+}
+
+.btn-secondary-light { /* For "Rechercher un hôpital" button */
+    border: 1px solid #A7C7F7; /* Lighter blue border */
+    color: #2563EB; /* Blue text */
+    background-color: #E0EEFF; /* Very light blue background */
+    margin-left: 10px;
+}
+
+.btn-secondary-light:hover {
+    background-color: #D1E7FF; /* Slightly darker light blue on hover */
+}
+
+
+/* ----- Section Héros ----- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+    text-align: left;
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #1F2937;
+}
+
+.hero h1 .highlight {
+    color: #2563EB; /* Texte bleu */
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #6B7280; /* Gris plus clair pour le sous-titre */
+    max-width: 500px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons .btn {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.hero-illustration {
+    position: relative;
+    width: 400px; /* Adjust size of the illustration container */
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-circle {
+    width: 320px;
+    height: 320px;
+    background-color: #2563EB; /* Main blue circle */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column; /* To stack icon and text */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.main-circle svg {
+    fill: white; /* Icon color */
+    width: 60px; /* Larger icon */
+    height: 60px;
+    margin-bottom: 15px; /* Space between icon and text */
+}
+
+.illustration-text {
+    text-align: center;
+    color: white;
+}
+
+.illustration-text h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.illustration-text p {
+    font-size: 16px;
+    color: #DBEAFE; /* Lighter white for subtext */
+    margin-top: 0; /* Override default paragraph margin */
+}
+
+
+.deco-circle {
+    position: absolute;
+    background-color: #DBEAFE; /* Bleu très clair */
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(2px); /* Soft blur */
+}
+
+.circle-1 {
+    width: 30px;
+    height: 30px;
+    top: 60px; /* Adjust position */
+    right: 40px; /* Adjust position */
+}
+
+.circle-2 {
+    width: 20px;
+    height: 20px;
+    bottom: 80px; /* Adjust position */
+    left: 40px; /* Adjust position */
+}
+
+/* ----- Section Caractéristiques ("Pourquoi choisir") ----- */
+.features {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1F2937;
+}
+
+.features .subtitle {
+    font-size: 18px;
+    color: #6B7280;
+    max-width: 600px;
+    margin: 20px auto 50px auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.feature-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background-color: #DBEAFE; /* Fond bleu clair pour l'icône */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+
+.feature-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+    fill: #2563EB; /* Icône bleue */
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* ----- Section Appel à l'action (CTA) ----- */
+.cta {
+    background-color: #2563EB;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 12px;
+    margin: 40px 0; /* Marge pour la détacher du reste */
+}
+
+.cta h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cta p {
+    margin: 15px 0 30px 0;
+    opacity: 0.9;
+}
+
+.cta .btn-light {
+    background-color: white;
+    color: #2563EB;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.cta .btn-light:hover {
+    background-color: #F3F4F6;
+}
+
+/* ----- Footer ----- */
+.footer {
+    background-color: #1F2937; /* Fond gris très foncé */
+    color: #D1D5DB; /* Texte gris clair */
+    padding: 60px 0 20px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-about .logo {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-links h4 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    border-top: 1px solid #4B5563; /* Ligne de séparation */
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #9CA3AF;
+}

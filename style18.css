@@ -1,0 +1,242 @@
+/* --- Variables & Styles Généraux --- */
+:root {
+    --blue: #3b82f6;
+    --green: #22c55e;
+    --red: #ef4444;
+    --amber: #f59e0b; /* Jaune/Orange pour "En attente" */
+    --bg-color: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* --- Mise en page principale --- */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar (Menu Latéral) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--white);
+    padding: 24px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.sidebar-header .logo {
+    width: 40px;
+    height: 40px;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-header .logo svg {
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.sidebar-nav .nav-title {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+    padding: 0 16px;
+}
+
+.sidebar-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav ul li a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar-nav ul li.active a {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.sidebar-nav ul li:not(.active) a:hover {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+/* --- Contenu Principal --- */
+.main-content {
+    flex: 1;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logout-btn {
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #dc2626; /* Rouge plus foncé */
+}
+
+/* --- Conteneur et Tableau de Données --- */
+.data-container {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.data-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.data-table th {
+    background-color: #f1f5f9;
+    color: var(--text-secondary);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.data-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Étiquettes de Statut --- */
+.status {
+    padding: 5px 12px;
+    border-radius: 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+}
+
+.status-confirmed {
+    background-color: #dcfce7; /* Fond vert clair */
+    color: #16a34a; /* Texte vert foncé */
+}
+
+.status-pending {
+    background-color: #fef9c3; /* Fond jaune clair */
+    color: #ca8a04; /* Texte jaune foncé */
+}
+
+.status-canceled {
+    background-color: #fee2e2; /* Fond rouge clair */
+    color: #dc2626; /* Texte rouge foncé */
+}
+
+/* --- Boutons d'Action (Valider, Supprimer) --- */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.validate-btn, .delete-btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: var(--white);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+.validate-btn { background-color: var(--green); }
+.validate-btn:hover { background-color: #16a34a; }
+.delete-btn { background-color: var(--red); }
+.delete-btn:hover { background-color: #b91c1c; }

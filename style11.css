@@ -1,0 +1,169 @@
+/* Définition des variables de couleur et des styles de base */
+:root {
+    --primary-blue: #2962ff;
+    --secondary-gray: #6c757d;
+    --secondary-bg-light: #f1f3f5;
+    --body-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-dark: #333;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --section-border-color: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+}
+
+/* En-tête principal */
+.main-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Conteneur principal pour centrer le contenu */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Style de la carte principale */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Sections du formulaire */
+.form-section {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--section-border-color);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Grille pour les champs du formulaire */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes de taille égale */
+    gap: 1.5rem; /* Espace entre les champs */
+}
+
+/* Champs de formulaire individuels */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.15);
+}
+
+/* Section pour les boutons d'action */
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Aligne les boutons à droite */
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Style des boutons */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e53e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(41, 98, 255, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-bg-light);
+    color: var(--secondary-gray);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+/* Rendre le layout responsive sur les petits écrans */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* 1 seule colonne */
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

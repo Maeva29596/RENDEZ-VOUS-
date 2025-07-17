@@ -1,0 +1,308 @@
+/* --- Styles Généraux --- */
+:root {
+    --primary-color-start: #7f5af0;
+    --primary-color-end: #6546e4;
+    --background-color: #f4f5f7;
+    --card-background: #ffffff;
+    --text-color: #2d3748;
+    --text-muted: #718096;
+    --star-color: #ffc107;
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Bannière Supérieure --- */
+.reviews-banner {
+    background: linear-gradient(90deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.reviews-banner .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.reviews-banner h1 {
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+/* --- Conteneur Principal & Layout --- */
+.reviews-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.review-form-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.reviews-list-column {
+    flex: 1.5;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Style de carte générique */
+.card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title .fa-solid {
+    color: var(--primary-color-start);
+}
+
+/* --- Colonne de Gauche : Formulaire --- */
+.review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color-start);
+    box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.2);
+}
+
+.review-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.review-form .star-rating {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--border-color);
+}
+
+.review-form .star-rating .fa-star {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.review-form .star-rating .fa-star.selected,
+.review-form .star-rating .fa-star:hover,
+.review-form .star-rating .fa-star:hover ~ .fa-star {
+    color: var(--star-color);
+}
+
+.review-form .star-rating:hover .fa-star:hover ~ .fa-star {
+     color: var(--border-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(127, 90, 240, 0.4);
+}
+
+
+/* --- Colonne de Droite : Liste des Avis --- */
+.rating-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.rating-summary .average-score {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.rating-summary .stars-and-count {
+    text-align: right;
+}
+
+.rating-summary .stars {
+    font-size: 1.2rem;
+    color: var(--star-color);
+    margin-bottom: 5px;
+}
+
+.rating-summary .review-count {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.review-item .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-item .reviewer-name {
+    font-weight: 600;
+}
+
+.review-item .review-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.review-item .stars {
+    color: var(--star-color);
+    margin-bottom: 10px;
+}
+
+.review-item .review-comment {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .reviews-container {
+        flex-direction: column;
+    }
+}
+/* --- Style pour la liste déroulante (select) --- */
+
+.review-form select {
+    /* On cache l'apparence par défaut du navigateur */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* On ajoute une flèche personnalisée en arrière-plan */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23718096'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center; /* Position de la flèche */
+    background-size: 24px; /* Taille de la flèche */
+    background-color: var(--card-background); /* Fond blanc */
+    
+    /* On s'assure que le texte ne passe pas sous la flèche */
+    padding-right: 40px; 
+}
+
+/* On groupe le style du select avec les autres champs pour la cohérence */
+.review-form input,
+.review-form textarea,
+.review-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Ajoute un curseur pointeur */
+}
+
+/* On groupe aussi l'effet de focus */
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus {
+    outline: none;
+    border-color: var(--primary-color-start);
+    box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.2);
+}
+
+/* On retire la marge du bas pour le select car on l'a déjà définie plus haut */
+.review-form .star-rating {
+    margin-bottom: 20px;
+}
+/* --- Améliorations spécifiques pour le champ "Note" --- */
+.review-form label[for="rating"] {
+    margin-top: 15px; /* Ajouter un peu d'espace au-dessus du label si nécessaire */
+    display: block; /* S'assurer que le label est bien au-dessus du select */
+    font-weight: 600; /* Rendre le label plus visible */
+    margin-bottom: 5px; /* Réduire un peu la marge sous le label */
+    font-size: 1rem; /* Augmenter légèrement la taille de la police du label pour la clarté */
+}
+
+.review-form select#rating {
+    padding: 14px; /* Augmenter légèrement le padding pour un meilleur aspect */
+    border: 1.5px solid var(--border-color); /* Rendre la bordure légèrement plus épaisse */
+    font-size: 1.05rem; /* Augmenter légèrement la taille de la police du select */
+}
+
+.review-form select#rating:focus {
+    border-color: var(--primary-color-end); /* Utiliser la couleur de fin de gradient pour le focus */
+    box-shadow: 0 0 5px rgba(101, 70, 228, 0.5); /* Ajouter une ombre légère au focus */
+}
+
+/* --- Améliorations spécifiques pour le champ "Votre commentaire" --- */
+.review-form label[for="comment"] {
+    margin-top: 25px; /* Ajouter plus d'espace au-dessus du label du commentaire */
+    display: block; /* S'assurer que le label est bien au-dessus du textarea */
+    font-weight: 600; /* Rendre le label plus visible */
+    margin-bottom: 8px; /* Conserver une marge appropriée sous le label */
+    font-size: 1rem; /* Augmenter légèrement la taille de la police du label pour la clarté */
+}
+
+.review-form textarea#comment {
+    padding: 15px; /* Augmenter légèrement le padding pour un meilleur aspect */
+    border: 1.5px solid var(--border-color); /* Rendre la bordure légèrement plus épaisse */
+    font-size: 1.05rem; /* Augmenter légèrement la taille de la police du textarea */
+    line-height: 1.7; /* Améliorer la lisibilité du texte long */
+}
+
+.review-form textarea#comment:focus {
+    border-color: var(--primary-color-end); /* Utiliser la couleur de fin de gradient pour le focus */
+    box-shadow: 0 0 5px rgba(101, 70, 228, 0.5); /* Ajouter une ombre légère au focus */
+}

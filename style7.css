@@ -1,0 +1,171 @@
+/* parametres.css */
+/* Importez les styles de base pour l'en-tête et la navigation */
+@import url('style6.css');
+
+/* Styles spécifiques pour la page des paramètres */
+.settings {
+    background-color: var(--primary-light-bg);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.settings h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.settings-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.save-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+    background-color: #1e69da;
+}
+
+/* Style pour afficher/masquer le mot de passe */
+.password-field {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--dark-grey);
+}
+
+.password-toggle i {
+    font-size: 1.2em;
+}
+
+
+/* Style commun pour les deux boutons */
+.btn-annuler,
+.btn-enregistrer {
+  padding: 10px 20px; /* Espacement intérieur (haut/bas, gauche/droite) */
+  border: none; /* Supprime la bordure par défaut */
+  border-radius: 5px; /* Arrondi les angles */
+  font-size: 16px; /* Taille de la police */
+  cursor: pointer; /* Change le curseur au survol pour indiquer que c'est cliquable */
+  transition: background-color 0.3s ease; /* Ajoute une transition douce pour le changement de couleur */
+}
+
+/* Style spécifique pour le bouton Annuler */
+.btn-annuler {
+  background-color: #f44336; /* Couleur de fond rouge */
+  color: white; /* Couleur du texte blanc */
+}
+
+.btn-annuler:hover {
+  background-color: #d32f2f; /* Couleur de fond rouge plus foncée au survol */
+}
+
+/* Style spécifique pour le bouton Enregistrer */
+.btn-enregistrer {
+  background-color: #4CAF50; /* Couleur de fond verte */
+  color: white; /* Couleur du texte blanc */
+}
+
+.btn-enregistrer:hover {
+  background-color: #388E3C; /* Couleur de fond verte plus foncée au survol */
+}
+
+/* Autres styles que vous pourriez vouloir ajouter */
+
+/* Mettre les boutons côte à côte avec un espace entre eux */
+.button-container {
+  display: flex;
+  gap: 10px; /* Espace de 10 pixels entre les éléments flex */
+}
+
+/* Modifier la taille des boutons */
+.btn-annuler,
+.btn-enregistrer {
+  /* ... autres styles ... */
+  font-size: 18px;
+  padding: 12px 25px;
+}
+
+/* Ajouter une ombre au survol */
+.btn-annuler:hover,
+.btn-enregistrer:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Changer la forme des boutons (plus arrondis ou carrés) */
+.btn-annuler,
+.btn-enregistrer {
+  /* ... autres styles ... */
+  border-radius: 20px; /* Plus arrondi */
+}
+
+/* Style pour désactiver un bouton */
+.btn-annuler:disabled,
+.btn-enregistrer:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+
+
+
+
+/* Responsive pour le formulaire */
+@media (max-width: 768px) {
+    .settings-form {
+        padding: 15px;
+    }
+}
