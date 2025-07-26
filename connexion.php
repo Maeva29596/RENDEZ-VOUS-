@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <div class="password-row">
         <label for="password">Mot de passe</label>
-          <a href="#">Mot de passe oublié?</a>
+          <a href="mot_de_passe_oublie.php">Mot de passe oublié?</a>
       </div>
       <div class="password-toggle">
         <input type="password" id="password" name="password" placeholder="********" required  />

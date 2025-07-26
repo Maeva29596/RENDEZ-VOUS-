@@ -30,6 +30,7 @@ $conn->close();
     <title>Tableau de bord Patient - MediCare</title>
     <link rel="stylesheet" href="style6.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+         
 </head>
 <body>
 
@@ -43,6 +44,7 @@ $conn->close();
                 <li class="active"><a href="#"><i class='bx bxs-home'></i> Accueil</a></li>
                 <li><a href="rendez-vous.php"><i class='bx bxs-calendar'></i> Rendez-vous</a></li>
                 <li><a href="parametres.php"><i class='bx bxs-cog'></i> Paramètres</a></li>
+               <li ><a href="chatbot.html"><i class='bx bxs-bot'></i> <span>Chatbot</span></a> </li>
             </ul>
         </nav>
         <div class="sidebar-footer">

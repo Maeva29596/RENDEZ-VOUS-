@@ -1,0 +1,160 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5; /* Un fond gris clair */
+}
+
+.card-container {
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box; /* S'assure que le padding n'augmente pas la largeur totale */
+}
+
+.lock-icon {
+    background-color: #e0f2fe; /* Bleu très clair */
+    color: #2196f3; /* Bleu plus foncé */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px; /* Espace après le paragraphe descriptif */
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+/* Style pour les messages de confirmation/erreur */
+.card > p[style="color: green; font-weight: bold;"] {
+    margin-top: -15px; /* Réduit l'espace avec le paragraphe précédent */
+    margin-bottom: 20px; /* Ajoute de l'espace avant le formulaire */
+    color: #28a745 !important; /* Vert pour le succès */
+    font-weight: bold;
+}
+/* Vous pouvez ajouter un style similaire pour les erreurs si le message est rouge par exemple */
+/* .card > p[style="color: red; font-weight: bold;"] {
+    color: #dc3545 !important;
+} */
+
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px; /* Espace entre les groupes de formulaire */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+}
+
+.at-icon {
+    color: #aaa;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+input[type="email"],
+select { /* Ajout de la balise select ici */
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #333;
+    background-color: transparent;
+    width: 100%; /* S'assure que select prend toute la largeur */
+    box-sizing: border-box; /* Important pour le select dans le input-wrapper ou directement */
+}
+
+input[type="email"]::placeholder {
+    color: #bbb;
+}
+
+/* Style spécifique pour le select pour qu'il ressemble aux inputs */
+select {
+    border: 1px solid #ddd; /* Bordure similaire aux inputs */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 12px 15px; /* Plus de padding pour le select */
+    appearance: none; /* Cache la flèche par défaut sur certains navigateurs */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.4H18.8c-7.9%200-14.3%207.2-14.3%2016.1s6.4%2016.1%2014.3%2016.1h255c7.9%200%2014.3-7.2%2014.3-16.1c0-4.7-1.9-9.1-5.3-12.4z%22%2F%3E%3C%2Fsvg%3E'); /* Flèche personnalisée */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #2196f3; /* Bordure bleue au focus */
+}
+
+
+.btn-send-link {
+    background-color: #2196f3; /* Bleu */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px; /* Espace au-dessus du bouton */
+}
+
+.btn-send-link:hover {
+    background-color: #1976d2; /* Bleu plus foncé au survol */
+}
+
+.back-to-login {
+    display: inline-block;
+    margin-top: 30px; /* Espace au-dessus du lien de retour */
+    color: #2196f3;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.back-to-login:hover {
+    color: #1976d2;
+}

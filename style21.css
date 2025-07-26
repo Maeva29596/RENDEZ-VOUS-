@@ -1,0 +1,251 @@
+/* --- VARIABLES & STYLES DE BASE --- */
+:root {
+    --primary-blue: #0052CC; /* Bleu principal, légèrement ajusté pour le contraste */
+    --light-blue-bg: #E6F0FF;
+    --background-grey: #f4f7fa;
+    --text-dark: #172B4D;
+    --text-light: #6B778C;
+    --white: #FFFFFF;
+    --border-color: #dfe1e6;
+    --shadow: 0 8px 24px rgba(23, 43, 77, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-grey);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* --- CONTENEUR PRINCIPAL --- */
+.page-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer en colonne sur mobile */
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.welcome-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.chatbot-container {
+    flex: 1;
+    min-width: 320px;
+}
+
+/* --- CARTE DE BIENVENUE (GAUCHE) --- */
+.welcome-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.icon-main {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem auto;
+    color: var(--white);
+    font-size: 2.5rem;
+}
+
+.welcome-card h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    letter-spacing: 2px;
+}
+
+.welcome-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.welcome-card p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* --- CARTES D'INFORMATIONS (BAS) --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(23, 43, 77, 0.15);
+}
+
+.icon-feature {
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-blue-bg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* --- FAUX CHATBOT (DROITE - Pour le design) --- */
+.chatbot-container {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-icon-header {
+    font-size: 1.5rem;
+}
+
+.chat-title h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.chat-title span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.chat-message {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+.chat-message.received {
+    background-color: var(--light-blue-bg);
+    color: var(--text-dark);
+    border-top-left-radius: 0;
+    align-self: flex-start;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.chat-footer input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.chat-footer button {
+    background: none;
+    border: none;
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .page-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-section, .chatbot-container {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+
+/* --- LIEN DE RETOUR --- */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2rem; /* Espace avant le contenu principal */
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
